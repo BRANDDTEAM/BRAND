@@ -857,26 +857,6 @@ send(msg.chat_id_, msg.id_,' ✯∫لا تستطيع استخدام البوت �
 end
 return false
 end
-if text == "تنظيف الميديا" and Manager(msg) then
-msgm = {[0]=msg.id_}
-local Message = msg.id_
-for i=1 , 1000 do
-Message = Message - 1048576
-msgm[i] = Message
-end
-tdcli_function({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = msgm},function(arg,data)
-new = 0 
-msgm2 = {}
-for i=0 ,data.total_count_ do
-if data.messages_[i] and data.messages_[i].content_ and data.messages_[i].content_.ID ~= "MessageText" then
-msgm2[new] = data.messages_[i].id_
-new = new + 1 + 0 + 0 + 0 + 0 
-end
-end
-DeleteMessage(msg.chat_id_,msgm2)
-end,nil)  
-send(msg.chat_id_, msg.id_,"تم ازالة 100 من الوسائط ")
-end
 if DevBRANDW(msg) then
 local bl = ' ✯∫اهلا عزيزي آلمـطـور\n ✯∫آنت آلمـطـور آلآسـآسـي للبوت\n┉  ┉  ┉  ┉  ┉  ┉  ┉  ┉ء\n ✯∫تسـتطـيع‌‏ آلتحگم باوامر البوت\n ✯∫من خلاال الكيبورت خاص بك\n ✯∫قناة سورس البوت [اضغط هنا](t.me/CXRCX)'
 local keyboard = {
@@ -2528,6 +2508,27 @@ end
 if text == "تفعيل تنبيه المعرف" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
 send(msg.chat_id_, msg.id_, '✯∫تم تفعيل تنبيه المعرف')
 database:set(bot_id.."Ttn:Userr:stats"..msg.chat_id_,"open")
+end
+if text == "تنظيف الميديا" and Manager(msg) then
+msgm = {[0]=msg.id_}
+local Message = msg.id_
+for i=1 , 1000 do
+Message = Message - 1048576
+msgm[i] = Message
+end
+tdcli_function({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = msgm},function(arg,data)
+new = 0 
+msgm2 = {}
+for i=0 ,data.total_count_ do
+if data.messages_[i] and data.messages_[i].content_ and data.messages_[i].content_.ID ~= "MessageText" then
+msgm2[new] = data.messages_[i].id_
+new = new + 1 + 0 + 0 + 0 + 0 
+end
+end
+DeleteMessage(msg.chat_id_,msgm2)
+end,nil)  
+send(msg.chat_id_, msg.id_,"   تم مسح 100 من الوسائط الموجودة ")
+end
 end
 if text == "تعطيل تنبيه المعرف" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
 send(msg.chat_id_, msg.id_, '✯∫تم تعطيل تنبيه المعرف')
@@ -11789,7 +11790,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'ٴ✯⊱•═════𝘽𝙍═════•⊰✯○ٴ\n✯∫彡 .[𝘽𝙍𝘼𝙉𝘿 𝙏𝙀𝘼𝙈](t.me/CXRCX)➢ ')
+send(msg.chat_id_, msg.id_, t..'ٴ✯⊱•═════𝘽𝙍═════•⊰✯○ٴ\n✯∫彡 .[𝘽??𝘼𝙉𝘿 𝙏𝙀𝘼𝙈](t.me/CXRCX)➢ ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '✯∫تم تعطيل الابراج')
