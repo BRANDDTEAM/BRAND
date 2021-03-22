@@ -857,6 +857,26 @@ send(msg.chat_id_, msg.id_,' ✯∫لا تستطيع استخدام البوت �
 end
 return false
 end
+if text == "تنظيف الميديا" and Manager(msg) then
+msgm = {[0]=msg.id_}
+local Message = msg.id_
+for i=1 , 1000 do
+Message = Message - 1048576
+msgm[i] = Message
+end
+tdcli_function({ID = "GetMessages",chat_id_ = msg.chat_id_,message_ids_ = msgm},function(arg,data)
+new = 0 
+msgm2 = {}
+for i=0 ,data.total_count_ do
+if data.messages_[i] and data.messages_[i].content_ and data.messages_[i].content_.ID ~= "MessageText" then
+msgm2[new] = data.messages_[i].id_
+new = new + 1 + 0 + 0 + 0 + 0 
+end
+end
+DeleteMessage(msg.chat_id_,msgm2)
+end,nil)  
+send(msg.chat_id_, msg.id_,"تم ازالة 100 من الوسائط ")
+end
 if DevBRANDW(msg) then
 local bl = ' ✯∫اهلا عزيزي آلمـطـور\n ✯∫آنت آلمـطـور آلآسـآسـي للبوت\n┉  ┉  ┉  ┉  ┉  ┉  ┉  ┉ء\n ✯∫تسـتطـيع‌‏ آلتحگم باوامر البوت\n ✯∫من خلاال الكيبورت خاص بك\n ✯∫قناة سورس البوت [اضغط هنا](t.me/CXRCX)'
 local keyboard = {
