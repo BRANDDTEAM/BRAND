@@ -2524,7 +2524,6 @@ if data.messages_[i] and data.messages_[i].content_ and data.messages_[i].conten
 msgm2[new] = data.messages_[i].id_
 new = new + 1 + 0 + 0 + 0 + 0 
 end
-end
 DeleteMessage(msg.chat_id_,msgm2)
 end,nil)  
 send(msg.chat_id_, msg.id_,"   تم مسح 100 من الوسائط الموجودة ")
