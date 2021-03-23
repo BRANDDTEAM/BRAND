@@ -2526,7 +2526,7 @@ new = new + 1 + 0 + 0 + 0 + 0
 end
 DeleteMessage(msg.chat_id_,msgm2)
 end,nil)  
-send(msg.chat_id_, msg.id_,"   تم مسح 100 من الوسائط الموجودة ")
+send(msg.chat_id_, msg.id_,"تم مسح 100 من الوسائط الموجوده")
 end
 if text == "تعطيل تنبيه المعرف" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
 send(msg.chat_id_, msg.id_, '✯∫تم تعطيل تنبيه المعرف')
