@@ -2507,8 +2507,7 @@ end,nil)
 end
 if text == "تفعيل تنبيه المعرف" and Constructor(msg) and database:get(bot_id.."AL:Sre:stats") == "✔" then
 send(msg.chat_id_, msg.id_, '✯∫تم تفعيل تنبيه المعرف')
-database:set(bot_id.."Ttn:Userr:stats"..msg.chat_id_,"open")
-end
+database:set(bot_id.."Ttn:Userr:stats"..msg.chat_id_,"open") 
 if text == "تنظيف الميديا" and Manager(msg) then
 msgm = {[0]=msg.id_}
 local Message = msg.id_
@@ -11788,7 +11787,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'ٴ✯⊱•═════𝘽𝙍═════•⊰✯○ٴ\n✯∫彡 .[𝘽??𝘼??𝘿 𝙏𝙀𝘼𝙈](t.me/CXRCX)➢ ')
+send(msg.chat_id_, msg.id_, t..'ٴ✯⊱•═════𝘽𝙍═════•⊰✯○ٴ\n✯∫彡 .[𝘽??𝘼??𝘿 𝙏??𝘼𝙈](t.me/CXRCX)➢ ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '✯∫تم تعطيل الابراج')
