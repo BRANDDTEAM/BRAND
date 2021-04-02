@@ -2120,11 +2120,13 @@ return false
 end
 end
 end
+
 if text == 'تفعيل' and Sudo(msg) then
-  if msg.can_be_deleted_ == false then 
-  send(msg.chat_id_, msg.id_,'• البوت ليس ادمن يرجى ترقيتي !') 
-  return false  
+ if msg.can_be_deleted_ == false then 
+ send(msg.chat_id_, msg.id_,'• البوت ليس ادمن يرجى ترقيتي !') 
+ return false  
   end
+
 if text == 'تفعيل' and Sudo(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
