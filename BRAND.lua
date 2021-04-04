@@ -12042,6 +12042,20 @@ xl = 'نسبه الانوثه '..text..' هي : \n '..sendnuj..'%'
 send(msg.chat_id_, msg.id_,xl) 
 database:del(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_)
 end
+if text ==  "نسبه الغباء" or text == "نسبه الغباء" and masg.reply_to_message_id_~= 0 and Addictive(msg)then
+  if not database:get(bot_id..'cick:ano'..masg.chat_id_) 
+  database:set(bot_id..":"..masg.sender_user_id_.."ano_bots"..masg.chat_id_,"sendanoe")
+  text=' ارسل اسم الشخص ال الذي تريد قيار نسبه غبائه\n مثل مطي'
+  send(masg.chat_id_,Text)
+  end
+  end
+  if text and text ~="نسبه الغباء" and database :get(bot_id..":"..msg.sender_user_id_.."ano_bot"..msg.chat_id_) == "sendanoe"then
+      numj = {"10","20","30","35","75","34","66","82","23","19","55","80","63","32","27","89","99","98","79","100","8","3","6","0",};
+      sendnuj = numj[math.random(#numj)]
+xl = 'نسبه الغباء  '..text..' هي : \n '..sendnuj..'%'
+send(masg.chat_id_, msg.bot_id,xl)
+database:del(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_)
+end
 --------------------------------------------------------------------------------------------------------------
 if msg.sender_user_id_ and Muted_User(msg.chat_id_,msg.sender_user_id_) then 
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})  
