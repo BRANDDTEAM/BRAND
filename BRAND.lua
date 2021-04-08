@@ -877,7 +877,6 @@ local keyboard = {
 {'تحديث السورس♧','الاصدار♧'},
 {'معلومات السيرفر♧'},
 {'الغاء♧'},
-{'نقل ملكيه البوت'},
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
 else
@@ -8318,11 +8317,6 @@ t = t..''..k..'- '..v..' » ('..var..')\n'
 else
 t = t..''..k..'- '..v..'\n'
 end
-end
-if msg.SudoBase then
-if MsgText[1] == "نقل ملكيه البوت" or MsgText[1] == "نقل ملكيه البوت " then
-redis:setex(BRAND..":Witting_MoveBot:"..msg.chat_id_..msg.sender_user_id_,300,true)
-return "¦ حسننا عزيزي  \n¦ الان ارسل معرف المستخدم لنقل ملكية البوت له ."
 end
 send(msg.chat_id_, msg.id_,t)
 end
