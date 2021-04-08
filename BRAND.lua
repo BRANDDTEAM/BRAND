@@ -1049,12 +1049,12 @@ end
 if text == 'تحديث السورس♧' and DevBRANDW(msg) then 
 os.execute('rm -rf BRAND.lua')
 os.execute('wget https://raw.githubusercontent.com/BRANDDTEAM/BRAND/main/BRAND.lua')
-send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.5v}')
+send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.3v}')
 dofile('BRAND.lua')  
 end
 if text == 'الاصدار♧' and DevBRANDW(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'♧اصدار سورس براند \n♧الاصدار »{ 1.5v}')
+send(msg.chat_id_, msg.id_,'♧اصدار سورس براند \n♧الاصدار »{ 1.4v}')
 end
 if text == 'قناه تحديثات البوت♧' and DevBRANDW(msg) then 
 database:del(bot_id..'Srt:Bot') 
@@ -2300,7 +2300,7 @@ return false
 end
 os.execute('rm -rf BRAND.lua')
 os.execute('wget https://raw.githubusercontent.com/BRANDDTEAM/BRAND/main/BRAND.lua')
-send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.5v}')
+send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.3v}')
 dofile('BRAND.lua')  
 end
 
@@ -10463,35 +10463,8 @@ Text = [[
 * ♧م9 ⏎اوامر مطور الاساسي* 
 * ♧م10 ⏎اوامر الاعضاء*
 ⊱•═════𝘽𝙍═════•⊰
-➫ .[🖨┇𝘽𝙍𝘼𝙉𝘿 𝙏𝙀𝘼𝙈. ](t.me/CXRCX)➤
+彡 .[𝘽𝙍𝘼𝙉𝘿 𝙏𝙀𝘼𝙈](t.me/CXRCX)➢ 
 ]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '1️⃣', callback_data="/help1"},{text = '2️⃣', callback_data="/help2"},{text = '3️⃣', callback_data="/help3"},
-},
-{
-{text = '4️⃣', callback_data="/help4"},{text = '5️⃣', callback_data="/help5"},
-},
-{
-{text = '6️⃣', callback_data="/help6"},{text = '7️⃣', callback_data="/help7"},{text = '8️⃣', callback_data="/help8"},
-},
-{
-{text = '9️⃣', callback_data="/help9"},{text = '🔟', callback_data="/help10"},
-},
-{
-{text = '𝘽𝙍𝘼𝙉𝘿 𝙏𝙀𝘼𝙈', url="t.me/CXRCX"},
-},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
------------------------------- callback add dev mr sofi
-if Text == '/mute-name' then
-if not Constructor(data) then
-local notText = '🚫 عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
 end
