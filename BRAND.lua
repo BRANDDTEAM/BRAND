@@ -4637,19 +4637,6 @@ send(msg.chat_id_, msg.id_, texts)
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 end
-if text == "غنيلي" and ChCheck(msg) then
-data,res = https.request('https://apiabs.ml/Audios.php')
-if res == 200 then
-Audios = json:decode(data)
-if Audios.Info == true then
-local Text ='⌁︙تم اختيار المقطع الصوتي لك'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '⌁ BrAnD.',url="t.me/CXRCX"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
 ------------------------------------------------------------------------
 if text and text:match("^تنزيل منشئ (%d+)$") and BasicConstructor(msg) then
 local userid = text:match("^تنزيل منشئ (%d+)$")
@@ -8887,38 +8874,6 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 end
-if text == 'تعطيل تحقق' and Addictive(msg) then   
-database:del(bot_id..'Tshake:nwe:mem:group'..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,'\n تم تعطيل تحقق' ) 
-end
-if text == 'تفعيل تحقق' and Addictive(msg) then  
-database:set(bot_id..'Tshake:nwe:mem:group'..msg.chat_id_,'true') 
-send(msg.chat_id_, msg.id_,'\nتم تفعيل تحقق' ) 
-end 
-
-if msg.content_.ID == "MessageChatJoinByLink" and database:get(bot_id..'Tshake:nwe:mem:group'..msg.chat_id_) == 'true'then
-numphoto = {'3','8','9','6'}
-numphotoid = numphoto[math.random(#numphoto)]
-local numjoine = (numphotoid + 3)
-local Texti = 'اختر اللجابه الصحيحه \n'..numphotoid..' + 3 ='
-local num1 = (5 + numphotoid)
-local num2 = (7 + numphotoid)
-local num3 = (1 + numphotoid)
-
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = num1, callback_data=msg.sender_user_id_.."/lockjoine"},{text = num2, callback_data=msg.sender_user_id_.."/unlockjoine"},
-},
-{
-{text =numjoine, callback_data=msg.sender_user_id_.."/UnKed@"..numjoine..":"..numjoine},{text = num3, callback_data=msg.sender_user_id_.."/unlockjoine"},
-},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Texti).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
-return false
-end
 
 if text == ("مسح ردود المطور") and DevBRANDW(msg) then 
 local list = database:smembers(bot_id..'List:Rd:Sudo')
@@ -11678,10 +11633,18 @@ send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
 
-if text == "غني" or text == "غنيلي" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"صوتي بعد مت سمعه✋يال رايح بلا رجعة🚶بزودك نزلت الدمعة ذاك اليوم☝️يال حبيتلك ثاني✌روح وياه وضل عاني😞يوم اسود علية اني🌚 ذاك اليوم☝️تباها بروحك واضحك😂لان بجيتلي عيني││ وافراح يابعد روحي😌خل الحركة تجويني😔🔥صوتي بعد متسمعة🗣✋","لا تظربني لا تظرب 💃💃 كسرت الخيزارانه💃?? صارلي سنه وست اشهر💃💃 من ظربتك وجعانه🤒😹","اي مو كدامك مغني قديم 😒🎋 هوه ﴿↫ انـِۨـۛـِۨـۛـِۨيـُِـٌِہۧۥۛ ֆᵛ͢ᵎᵖ ⌯﴾❥  ربي كامز و تكلي غنيلي 🙄😒🕷 آإرۈحُـ ♧ـہ♧ 😴أنــ💤ــااااام😴  اشرف تالي وكت يردوني اغني 😒☹️??","كافي لتلح😒🔪" }
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+if text == "غنيلي" and ChCheck(msg) then
+data,res = https.request('https://apiabs.ml/Audios.php')
+if res == 200 then
+Audios = json:decode(data)
+if Audios.Info == true then
+local Text ='⌁︙تم اختيار المقطع الصوتي لك'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '⌁ D9L9L.',url="t.me/D9L9L"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 
