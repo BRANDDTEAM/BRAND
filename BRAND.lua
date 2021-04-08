@@ -1049,12 +1049,12 @@ end
 if text == 'تحديث السورس♧' and DevBRANDW(msg) then 
 os.execute('rm -rf BRAND.lua')
 os.execute('wget https://raw.githubusercontent.com/BRANDDTEAM/BRAND/main/BRAND.lua')
-send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.3v}')
+send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.5v}')
 dofile('BRAND.lua')  
 end
 if text == 'الاصدار♧' and DevBRANDW(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'♧اصدار سورس براند \n♧الاصدار »{ 1.4v}')
+send(msg.chat_id_, msg.id_,'♧اصدار سورس براند \n♧الاصدار »{ 1.5v}')
 end
 if text == 'قناه تحديثات البوت♧' and DevBRANDW(msg) then 
 database:del(bot_id..'Srt:Bot') 
@@ -2300,7 +2300,7 @@ return false
 end
 os.execute('rm -rf BRAND.lua')
 os.execute('wget https://raw.githubusercontent.com/BRANDDTEAM/BRAND/main/BRAND.lua')
-send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.3v}')
+send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.5v}')
 dofile('BRAND.lua')  
 end
 
