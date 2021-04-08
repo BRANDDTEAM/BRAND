@@ -1049,12 +1049,12 @@ end
 if text == 'تحديث السورس♧' and DevBRANDW(msg) then 
 os.execute('rm -rf BRAND.lua')
 os.execute('wget https://raw.githubusercontent.com/BRANDDTEAM/BRAND/main/BRAND.lua')
-send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 2.0v}')
+send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.3v}')
 dofile('BRAND.lua')  
 end
 if text == 'الاصدار♧' and DevBRANDW(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'♧اصدار سورس براند \n♧الاصدار »{ 2.0v}')
+send(msg.chat_id_, msg.id_,'♧اصدار سورس براند \n♧الاصدار »{ 1.4v}')
 end
 if text == 'قناه تحديثات البوت♧' and DevBRANDW(msg) then 
 database:del(bot_id..'Srt:Bot') 
@@ -2300,7 +2300,7 @@ return false
 end
 os.execute('rm -rf BRAND.lua')
 os.execute('wget https://raw.githubusercontent.com/BRANDDTEAM/BRAND/main/BRAND.lua')
-send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 2.0v}')
+send(msg.chat_id_, msg.id_,'♧تم تحديث السورس \n♧لديك اخر اصدار لسورس براند\n♧الاصدار » { 1.3v}')
 dofile('BRAND.lua')  
 end
 
@@ -11584,16 +11584,20 @@ send(msg.chat_id_, msg.id_, '♧تم تعطيل الردود')
 database:set(bot_id..'lock:add'..msg.chat_id_, true)
 end
 
-if text == "هينه" or text == "رزله" then
-local texting = {"مااهين حيوانات اني 😹😭💘."," ماا وخر ماسوي شي 😭💘 ."}
+if text == "السلام عليكم" or text == "سلام عليكم" or text == "سلامن عليكم" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"علـيكملسـلام","وعــليكم اغـاتي" }
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-return false
 end
-if text == "مصه" or text == "بوسه" then
-local texting = {"ما ما ما اخجل شني 😭??💞","ماا وخر مابوسك 😭💞💞"," ما ما ما اخجل شني 😭😭💞"}
+end
+
+if text == "شلونك" or text == "شلونكم" or text == "شونك" or text == "شلونج" or text == "شونج" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"تمــام حـياتي","حمـدالله وانـت/ي" }
 send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-return false
 end
+end
+
 if text == 'هلو' then
 TextReply = 'ههلو ، 🥳😹💞'
 send(msg.chat_id_, msg.id_,'['..TextReply..']')
@@ -11745,6 +11749,7 @@ send(msg.chat_id_, msg.id_,'['..TextReply..']')
 return false
 end
 if text == '🌝' then
+
 TextReply = 'يا ڪمࢪ ☹️💗'
 send(msg.chat_id_, msg.id_,'['..TextReply..']')
 return false
@@ -11878,7 +11883,6 @@ if text == 'انتة منو' then
 TextReply = 'انيـہ حاميكم 😒😹💞'
 send(msg.chat_id_, msg.id_,'['..TextReply..']')
 return false
-end
 end
 if text == "تعطيل الزخرفه" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '♧تم تعطيل الزخرفه')
