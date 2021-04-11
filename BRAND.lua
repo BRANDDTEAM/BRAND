@@ -1,11 +1,3 @@
---------------------------------------------------------------------------------------------------------------
-print([[
-‌‌‎ 
-▒█▀▀█ ▒█▀▀█ ░█▀▀█ ▒█▄░▒█ ▒█▀▀▄ 
-▒█▀▀▄ ▒█▄▄▀ ▒█▄▄█ ▒█▒█▒█ ▒█░▒█ 
-▒█▄▄█ ▒█░▒█ ▒█░▒█ ▒█░░▀█ ▒█▄▄▀
-]])
-
 redis = require('redis') 
 https = require ("ssl.https") 
 serpent = dofile("./library/serpent.lua") 
@@ -145,10 +137,11 @@ end
 _redis = load_redis()  
 --------------------------------------------------------------------------------------------------------------
 print([[
-‌‌‎ 
-▒█▀▀█ ▒█▀▀█ ░█▀▀█ ▒█▄░▒█ ▒█▀▀▄ 
-▒█▀▀▄ ▒█▄▄▀ ▒█▄▄█ ▒█▒█▒█ ▒█░▒█ 
-▒█▄▄█ ▒█░▒█ ▒█░▒█ ▒█░░▀█ ▒█▄▄▀
+‌‌‎ ____  ____      _    _   _ ____  
+|  )|  _ \    / \  | \ | |  _ \ 
+|  _ \| |_) |  / _ \ |  \| | | | |
+| |_) |  _ <  / _ \| |\  | |_| |
+|____/|_| \_\/_/   \_\_| \_|____/
 > CH › @CXRCX
 > CH › @GXKXG
 ~> DEVELOPER › @S_X_X_G
@@ -173,7 +166,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1566031059,1377884661,1033028167}   
+sudo_users = {SUDO,1566031059,1503514782,1033028167}   
 function SudoBot(msg)  
 local BRAND = false  
 for k,v in pairs(sudo_users) do  
@@ -257,7 +250,7 @@ end
 function Can_or_NotCan(user_id,chat_id)
 if tonumber(user_id) == tonumber(1566031059) then  
 var = true  
-elseif tonumber(user_id) == tonumber(1377884661) then
+elseif tonumber(user_id) == tonumber(1503514782) then
 var = true 
 elseif tonumber(user_id) == tonumber(1033028167) then
 var = true  
@@ -291,7 +284,7 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1566031059) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(1377884661) then
+elseif tonumber(user_id) == tonumber(1503514782) then
 var = 'مبرمج براند'
 elseif tonumber(user_id) == tonumber(1033028167) then
 var = 'Telegram Developer'
