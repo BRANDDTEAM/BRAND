@@ -801,9 +801,8 @@ function plugin_BRAND(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
-if plugin.BRANDand msg then
+if plugin.BRAND and msg then
 pre_msg = plugin.BRAND(msg)
-end
 end
 end
 send(msg.chat_id_, msg.id_,pre_msg)  
