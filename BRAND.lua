@@ -797,12 +797,13 @@ return false
 end
 end,nil)   
 end  
-function plugin_Poyka(msg)
+function plugin_BRAND(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
-if plugin.Poyka and msg then
-pre_msg = plugin.Poyka(msg)
+if plugin.BRANDand msg then
+pre_msg = plugin.BRAND(msg)
+end
 end
 end
 send(msg.chat_id_, msg.id_,pre_msg)  
