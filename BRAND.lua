@@ -10465,11 +10465,6 @@ Text = [[
 ⊱•═════𝘽𝙍═════•⊰
 彡 .[𝘽𝙍𝘼𝙉𝘿 𝙏𝙀𝘼𝙈](t.me/CXRCX)➢ 
 ]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𝘽𝙍𝘼𝙉𝘿 𝙏𝙀𝘼𝙈', url="t.me/CXRCX"},
-},
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
 end
