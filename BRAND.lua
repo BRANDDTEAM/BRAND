@@ -8816,43 +8816,36 @@ send(msg.chat_id_,msg.id_,t)
 end,nil)
 end
 
-if text and text:match("^تنزيل الكل @(.*)$") and Manager(msg) then
+if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'♧︙ لا تستطيع استخدام البوت \n ♧︙ يرجى الاشتراك بالقناه اولا \n ♧︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'♧:لا تستطيع استخدام البوت \n ♧:يرجى الاشتراك بالقناه اولا \n ♧:اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function start_function(extra, result, success)
-if (result.id_) then
-if tonumber(result.id_) == true then
-send(msg.chat_id_, msg.id_,"♧︙ لا تستطيع تنزيل المطور الاساسي")
+if tonumber(SUDO) == tonumber(result.sender_user_id_) then
+send(msg.chat_id_, msg.id_,"♧:لا تستطيع تنزيل المطور الاساسي")
 return false 
 end
-if database:sismember(bot_id.."Sudo:User",result.id_) then
-dev = "المطور ،" else dev = "" end
-if database:sismember(bot_id.."CoSu",result.id_) then
-cu = "المالك ،" else cu = "" end
-if database:sismember(bot_id.."Basic:Constructor"..msg.chat_id_, result.id_) then
-crr = "منشئ اساسي ،" else crr = "" end
-if database:sismember(bot_id..'Constructor'..msg.chat_id_, result.id_) then
-cr = "منشئ ،" else cr = "" end
-if database:sismember(bot_id..'Manager'..msg.chat_id_, result.id_) then
-own = "مدير ،" else own = "" end
-if database:sismember(bot_id..'S_X_X_G:MN:TF'..msg.chat_id_, result.id_) then
-mn = 'منظف ،' else mn = '' end
-if database:sismember(bot_id..'Mod:User'..msg.chat_id_, result.id_) then
-mod = "ادمن ،" else mod = "" end
-if database:sismember(bot_id..'Special:User'..msg.chat_id_, result.id_) then
-vip = "مميز ،" else vip = ""
+if database:sismember(bot_id..'Sudo:User',result.sender_user_id_) then
+dev = 'المطور ،' else dev = '' end
+if database:sismember(bot_id..'CoSu'..msg.chat_id_, result.sender_user_id_) then
+cu = 'المالك ،' else cu = '' end
+if database:sismember(bot_id..'Basic:Constructor'..msg.chat_id_, result.sender_user_id_) then
+crr = 'منشئ اساسي ،' else crr = '' end
+if database:sismember(bot_id..'Constructor'..msg.chat_id_, result.sender_user_id_) then
+cr = 'منشئ ،' else cr = '' end
+if database:sismember(bot_id..'Manager'..msg.chat_id_, result.sender_user_id_) then
+own = 'مدير ،' else own = '' end
+if database:sismember(bot_id..'Mod:User'..msg.chat_id_, result.sender_user_id_) then
+mod = 'ادمن ،' else mod = '' end
+if database:sismember(bot_id..'Special:User'..msg.chat_id_, result.sender_user_id_) then
+vip = 'مميز ،' else vip = ''
 end
-if Can_or_NotCan(result.id_,msg.chat_id_) ~= false then
-send(msg.chat_id_, msg.id_,"\n♧︙ تم تنزيل الشخص من الرتب التاليه \n♧︙  { "..dev..""..crr..""..cr..""..own..""..mod..""..mn..""..vip.." } \n")
-else
-send(msg.chat_id_, msg.id_,"\n♧︙  عذرا العضو لايملك رتبه \n")
 if Can_or_NotCan(result.sender_user_id_,msg.chat_id_) ~= false then
 send(msg.chat_id_, msg.id_,"\n♧:تم تنزيل الشخص من الرتب التاليه \n♧:{ "..dev..''..cu..''..crr..''..cr..''..own..''..mod..''..vip.." } \n")
 else
