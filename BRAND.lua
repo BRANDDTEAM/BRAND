@@ -1258,8 +1258,8 @@ return false
 end
 
 
-if text and text:match("^اضف مطور  @(.*)$") and DevBRANDW(msg) then
-local username = text:match("^اضف مطور  @(.*)$")
+if text and text:match("^رفع مطور  @(.*)$") and DevBRANDW(msg) then
+local username = text:match("^رفع مطور  @(.*)$")
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -1287,8 +1287,8 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 return false 
 end
-if text and text:match("^اضف مطور  (%d+)$") and DevBRANDW(msg) then
-local userid = text:match("^اضف مطور  (%d+)$")
+if text and text:match("^رفع مطور  (%d+)$") and DevBRANDW(msg) then
+local userid = text:match("^رفع مطور  (%d+)$")
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -3863,7 +3863,7 @@ end,nil)
 end
 end
 
-if text == ("اضف مطور ") and msg.reply_to_message_id_ and DevBRANDW(msg) then
+if text == ("رفع مطور ") and msg.reply_to_message_id_ and DevBRANDW(msg) then
 function start_function(extra, result, success)
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -3884,8 +3884,8 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false 
 end
-if text and text:match("^اضف مطور  @(.*)$") and DevBRANDW(msg) then
-local username = text:match("^اضف مطور  @(.*)$")
+if text and text:match("^رفع مطور  @(.*)$") and DevBRANDW(msg) then
+local username = text:match("^رفع مطور  @(.*)$")
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -3913,8 +3913,8 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 return false 
 end
-if text and text:match("^اضف مطور  (%d+)$") and DevBRANDW(msg) then
-local userid = text:match("^اضف مطور  (%d+)$")
+if text and text:match("^رفع مطور  (%d+)$") and DevBRANDW(msg) then
+local userid = text:match("^رفع مطور  (%d+)$")
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -4871,7 +4871,7 @@ send(msg.chat_id_, msg.id_,"☆:تمت ترقيه { "..num2.." } من الادم
 end
 end,nil)   
 end
-if text == ("اضف مطور  ثانوي") and tonumber(msg.reply_to_message_id_) ~= 0 and SudoBot(msg) then
+if text == ("رفع مطور  ثانوي") and tonumber(msg.reply_to_message_id_) ~= 0 and SudoBot(msg) then
 function Function_BRAND(extra, result, success)
 database:sadd(bot_id.."DEV:Sudo:T", result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","☆:تم ترقيته مطور ثانوي في البوت")  
@@ -4879,8 +4879,8 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BRAND, nil)
 return false 
 end
-if text and text:match("^اضف مطور  ثانوي @(.*)$") and SudoBot(msg) then
-local username = text:match("^اضف مطور  ثانوي @(.*)$")
+if text and text:match("^رفع مطور  ثانوي @(.*)$") and SudoBot(msg) then
+local username = text:match("^رفع مطور  ثانوي @(.*)$")
 function Function_BRAND(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
@@ -4896,8 +4896,8 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BRAND, nil)
 return false 
 end
-if text and text:match("^اضف مطور  ثانوي (%d+)$") and SudoBot(msg) then
-local userid = text:match("^اضف مطور  ثانوي (%d+)$")
+if text and text:match("^رفع مطور  ثانوي (%d+)$") and SudoBot(msg) then
+local userid = text:match("^رفع مطور  ثانوي (%d+)$")
 database:sadd(bot_id.."DEV:Sudo:T", userid)
 Reply_Status(msg,userid,"reply","☆:تم ترقيته مطور ثانوي في البوت")  
 return false 
