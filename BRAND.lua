@@ -5195,6 +5195,25 @@ send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
 send(msg.chat_id_, msg.id_,'☆:لا تستطيع استخدام البوت \n ☆:يرجى الاشتراك بالقناه اولا \n ☆:اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
+if text == "ترتيب الاوامر" and Constructor(msg) then
+database:set(bot_id.."BRANDTEAM:Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
+database:sadd(bot_id.."BRANDTEAM:List:Cmd:Group:New"..msg.chat_id_,"ا")
+database:set(bot_id.."BRANDTEAM:Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
+database:sadd(bot_id.."BRANDTEAM:List:Cmd:Group:New"..msg.chat_id_,"م")
+database:set(bot_id.."BRANDTEAM:Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
+database:sadd(bot_id.."BRANDTEAM:List:Cmd:Group:New"..msg.chat_id_,"اد")
+database:set(bot_id.."BRANDTEAM:Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
+database:sadd(bot_id.."BRANDTEAM:List:Cmd:Group:New"..msg.chat_id_,"مد")
+database:set(bot_id.."BRANDTEAM:Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
+database:sadd(bot_id.."BRANDTEAM:List:Cmd:Group:New"..msg.chat_id_,"من")
+database:set(bot_id.."BRANDTEAM:Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
+database:sadd(bot_id.."BRANDTEAM:List:Cmd:Group:New"..msg.chat_id_,"اس")
+database:set(bot_id.."BRANDTEAM:Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
+database:sadd(bot_id.."BRANDTEAM:List:Cmd:Group:New"..msg.chat_id_,"تعط")
+database:set(bot_id.."BRANDTEAM:Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
+database:sadd(bot_id.."BRANDTEAM:List:Cmd:Group:New"..msg.chat_id_,"تفع")
+send(msg.chat_id_, msg.id_,"☆:تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس  . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")  
+end
 return false
 end
 if database:get(bot_id..'Lock:kick'..msg.chat_id_) and not Constructor(msg) then
