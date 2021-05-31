@@ -655,7 +655,7 @@ end
 function Addmp3(msg,chat,kkl,ffrr)
 local eer = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..kkl)) 
 download_to_file('https://api.telegram.org/file/bot'..token..'/'..eer.result.file_path,ffrr) 
-sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"@CXRCX")  
+sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"@VVVZVV")  
 os.execute('rm -rf ./'..ffrr) 
 end
 function Addsticker(msg,chat,Sd,rre)
@@ -2407,7 +2407,7 @@ send(msg.chat_id_, msg.id_, '☆:تم تعطيل الاسماء المكتومه
 database:set(bot_id.."block:name:stats"..msg.chat_id_,"close")
 end
 if not Manager(msg) and database:get(bot_id.."block:name:stats"..msg.chat_id_) == "open" then
-function CXRCX_name(t1,t2)
+function VVVZVV_name(t1,t2)
 if t2.id_ then 
 name_BRAND = ((t2.first_name_ or "") .. (t2.last_name_ or ""))
 if name_BRAND then 
@@ -2422,7 +2422,7 @@ end
 end
 end
 end
-bnnaGet(msg.sender_user_id_, CXRCX_name)
+bnnaGet(msg.sender_user_id_, VVVZVV_name)
 end
 if database:get(bot_id.."kt:twh:stats"..msg.chat_id_) == "open" then
 if text and text:match("^وضع توحيد (.*)$") and Manager(msg) and database:get(bot_id.."kt:twh:stats"..msg.chat_id_) == "open" then
@@ -3801,11 +3801,11 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == "تاك للمشرفين" and CoSu(msg) then
-if database:get(bot_id.."CXRCX:admin:Time"..msg.chat_id_) then 
+if database:get(bot_id.."VVVZVV:admin:Time"..msg.chat_id_) then 
 return
  send(msg.chat_id_, msg.id_,"انتظر دقيقه من فضلك")
 end
-database:setex(bot_id..'CXRCX:admin:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
+database:setex(bot_id..'VVVZVV:admin:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 m = 0
 tgad = 0
@@ -3831,11 +3831,11 @@ end,nil)
 end
 if text == "@all" and CoSu(msg) then
 if not database:get(bot_id..'Cick:all'..msg.chat_id_) then
-if database:get(bot_id.."CXRCX:all:Time"..msg.chat_id_..':'..msg.sender_user_id_) then  
+if database:get(bot_id.."VVVZVV:all:Time"..msg.chat_id_..':'..msg.sender_user_id_) then  
 return 
 send(msg.chat_id_, msg.id_,"انتظر دقيقه من فضلك")
 end
-database:setex(bot_id..'CXRCX:all:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
+database:setex(bot_id..'VVVZVV:all:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
 tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(argg,dataa) 
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = dataa.member_count_},function(ta,amir)
 x = 0
@@ -5143,25 +5143,6 @@ return false
 end
 
 ------------------------------------------------------------------------
-if text == "ترتيب الاوامر" and Constructor(msg) then
-  database:set(bot_id.."CXRCX:Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
-  database:sadd(bot_id.."CXRCX:List:Cmd:Group:New"..msg.chat_id_,"ا")
-  database:set(bot_id.."CXRCX:Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
-  database:sadd(bot_id.."CXRCX:List:Cmd:Group:New"..msg.chat_id_,"م")
-  database:set(bot_id.."CXRCX:Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
-  database:sadd(bot_id.."CXRCX:List:Cmd:Group:New"..msg.chat_id_,"اد")
-  database:set(bot_id.."CXRCX:Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
-  database:sadd(bot_id.."CXRCX:List:Cmd:Group:New"..msg.chat_id_,"مد")
-  database:set(bot_id.."CXRCX:Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
-  database:sadd(bot_id.."CXRCX:List:Cmd:Group:New"..msg.chat_id_,"من")
-  database:set(bot_id.."CXRCX:Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
-  database:sadd(bot_id.."CXRCX:List:Cmd:Group:New"..msg.chat_id_,"اس")
-  database:set(bot_id.."CXRCX:Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
-  database:sadd(bot_id.."CXRCX:List:Cmd:Group:New"..msg.chat_id_,"تعط")
-  database:set(bot_id.."CXRCX:Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
-  database:sadd(bot_id.."CXRCX:List:Cmd:Group:New"..msg.chat_id_,"تفع")
-  send(msg.chat_id_, msg.id_,"☆:تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس  . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")  
-  end
 if text == ("طرد") and msg.reply_to_message_id_ ~=0 and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -5256,6 +5237,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 return false
 end  
+
 if text and text:match("^طرد (%d+)$") and Mod(msg) then 
 local userid = text:match("^طرد (%d+)$") 
 if AddChannel(msg.sender_user_id_) == false then
@@ -5398,6 +5380,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 return false
 end
+
 if text and text:match("^رفع مميز (%d+)$") and Mod(msg) then
 local userid = text:match("^رفع مميز (%d+)$")
 if AddChannel(msg.sender_user_id_) == false then
@@ -8634,7 +8617,7 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text and text:match('^تنظيف (%d+)$') and Manager(msg) then
-if not database:get(bot_id..'CXRCX:Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_) then           
+if not database:get(bot_id..'VVVZVV:Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_) then           
 local num = tonumber(text:match('^تنظيف (%d+)$')) 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -8655,7 +8638,7 @@ DeleteMessage(msg.chat_id_, {[0] = msgm})
 msgm = msgm - 1048576
 end
 send(msg.chat_id_,msg.id_,'☆:تم حذف {'..num..'}')  
-database:setex(bot_id..'CXRCX:Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
+database:setex(bot_id..'VVVZVV:Delete:Time'..msg.chat_id_..':'..msg.sender_user_id_,300,true)
 end
 end
 
@@ -10550,6 +10533,27 @@ local msgs = {
 local chat = msg.chat_id_
 delete_msg(chat, msgs)
 end
+--------------------------------------------------------------------------------------------------------------
+if text == "ترتيب الاوامر" and Constructor(msg) then
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ا")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"م")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":مد","رفع مدير")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"مد")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":من","رفع منشئ")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"من")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اس","رفع منشئ اساسي")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اس")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تعط","تعطيل الايدي بالصوره")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تعط")
+ database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تفع")
+ send(msg.chat_id_, msg.id_,"☆:تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")
+ end
+ --------------------------------------------------------------------------------------------------------------
 if text == 'م2' then
 if not Mod(msg) then
 send(msg.chat_id_, msg.id_,'☆:هاذا الامر خاص بالادمنيه\n☆:ارسل {م10} لعرض اوامر الاعضاء')
