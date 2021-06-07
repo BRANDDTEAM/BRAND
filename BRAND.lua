@@ -1260,94 +1260,6 @@ end,nil)
 end
 return false
 end
-if text == 'الملفات' and DevBRANDW(msg) then
-t = ' ❃∫ ملفات السورس بويكا ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻 \n'
-i = 0
-for v in io.popen('ls File_Bot'):lines() do
-if v:match(".lua$") then
-i = i + 1
-t = t..i..'- الملف » {'..v..'}\n'
-end
-end
-send(msg.chat_id_, msg.id_,t)
-end
-if text == "متجر الملفات" or text == 'المتجر' then
-if DevBRANDW(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/main/getfile.json")
-if res == 200 then
-local Get_info, res = pcall(JSON.decode,Get_Files);
-vardump(res.plugins_)
-if Get_info then
-local TextS = "\n ❃∫ اهلا بك في متجر ملفات بويكا\n ❃∫ ملفات السورس ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻\n\n"
-local TextE = "\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻\n ❃∫ علامة تعني { ✓ } ملف مفعل\n ❃∫ علامة تعني { ✘ } ملف معطل\n ❃∫ قناة سورس بويكا ↓\n".." ❃∫ [اضغط هنا لدخول](t.me/CXRCX) \n"
-local NumFile = 0
-for name,Info in pairs(res.plugins_) do
-local Check_File_is_Found = io.open("File_Bot/"..name,"r")
-if Check_File_is_Found then
-io.close(Check_File_is_Found)
-CeckFile = "(✓)"
-else
-CeckFile = "(✘)"
-end
-NumFile = NumFile + 1
-TextS = TextS..'*'..NumFile.."→* {`"..name..'`} » '..CeckFile..'\n[-Information]('..Info..')\n'
-end
-send(msg.chat_id_, msg.id_,TextS..TextE) 
-end
-else
-send(msg.chat_id_, msg.id_," ❃∫ لا يوجد اتصال من ال api \n") 
-end
-return false
-end
-end
-
-if text and text:match("^(تعطيل) (.*)(.lua)$") and DevBRANDW(msg) then
-local name_t = {string.match(text, "^(تعطيل) (.*)(.lua)$")}
-local file = name_t[2]..'.lua'
-local file_bot = io.open("File_Bot/"..file,"r")
-if file_bot then
-io.close(file_bot)
-t = " ❃∫ الملف » "..file.."\n ❃∫ تم تعطيل ملف \n"
-else
-t = " ❃∫ بالتاكيد تم تعطيل ملف → "..file.."\n"
-end
-local json_file, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/main/File_Bot/"..file)
-if res == 200 then
-os.execute("rm -fr File_Bot/"..file)
-send(msg.chat_id_, msg.id_,t) 
-dofile('BRAND.lua')  
-else
-send(msg.chat_id_, msg.id_," ❃∫ عذرا الملف لايدعم سورس بويكا \n") 
-end
-return false
-end
-if text and text:match("^(تفعيل) (.*)(.lua)$") and DevBRANDW(msg) then
-local name_t = {string.match(text, "^(تفعيل) (.*)(.lua)$")}
-local file = name_t[2]..'.lua'
-local file_bot = io.open("File_Bot/"..file,"r")
-if file_bot then
-io.close(file_bot)
-t = " ❃∫ بالتاكيد تم تفعيل ملف → "..file.." \n"
-else
-t = " ❃∫ الملف » "..file.."\n ❃∫ تم تفعيل ملف \n"
-end
-local json_file, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/main/File_Bot/"..file)
-if res == 200 then
-local chek = io.open("File_Bot/"..file,'w+')
-chek:write(json_file)
-chek:close()
-send(msg.chat_id_, msg.id_,t) 
-dofile('BRAND.lua')  
-else
-send(msg.chat_id_, msg.id_," ❃∫ عذرا الملف لايدعم سورس بويكا \n") 
-end
-return false
-end
-if text == "مسح الملفات" and DevBRANDW(msg) then
-os.execute("rm -fr File_Bot/*")
-send(msg.chat_id_,msg.id_," ❃∫ تم مسح الملفات")
-return false
-end
 
 if text and text:match("^رفع مطور @(.*)$") and DevBRANDW(msg) then
 local username = text:match("^رفع مطور @(.*)$")
@@ -3952,6 +3864,94 @@ end
 end,nil)
 end,nil)
 end
+end
+if text == 'الملفات' and DevBRANDW(msg) then
+t = ' ❃∫ ملفات السورس بويكا ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻 \n'
+i = 0
+for v in io.popen('ls File_Bot'):lines() do
+if v:match(".lua$") then
+i = i + 1
+t = t..i..'- الملف » {'..v..'}\n'
+end
+end
+send(msg.chat_id_, msg.id_,t)
+end
+if text == "متجر الملفات" or text == 'المتجر' then
+if DevBRANDW(msg) then
+local Get_Files, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/main/getfile.json")
+if res == 200 then
+local Get_info, res = pcall(JSON.decode,Get_Files);
+vardump(res.plugins_)
+if Get_info then
+local TextS = "\n ❃∫ اهلا بك في متجر ملفات بويكا\n ❃∫ ملفات السورس ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻\n\n"
+local TextE = "\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻\n ❃∫ علامة تعني { ✓ } ملف مفعل\n ❃∫ علامة تعني { ✘ } ملف معطل\n ❃∫ قناة سورس بويكا ↓\n".." ❃∫ [اضغط هنا لدخول](t.me/CXRCX) \n"
+local NumFile = 0
+for name,Info in pairs(res.plugins_) do
+local Check_File_is_Found = io.open("File_Bot/"..name,"r")
+if Check_File_is_Found then
+io.close(Check_File_is_Found)
+CeckFile = "(✓)"
+else
+CeckFile = "(✘)"
+end
+NumFile = NumFile + 1
+TextS = TextS..'*'..NumFile.."→* {`"..name..'`} » '..CeckFile..'\n[-Information]('..Info..')\n'
+end
+send(msg.chat_id_, msg.id_,TextS..TextE) 
+end
+else
+send(msg.chat_id_, msg.id_," ❃∫ لا يوجد اتصال من ال api \n") 
+end
+return false
+end
+end
+
+if text and text:match("^(تعطيل) (.*)(.lua)$") and DevBRANDW(msg) then
+local name_t = {string.match(text, "^(تعطيل) (.*)(.lua)$")}
+local file = name_t[2]..'.lua'
+local file_bot = io.open("File_Bot/"..file,"r")
+if file_bot then
+io.close(file_bot)
+t = " ❃∫ الملف » "..file.."\n ❃∫ تم تعطيل ملف \n"
+else
+t = " ❃∫ بالتاكيد تم تعطيل ملف → "..file.."\n"
+end
+local json_file, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/main/File_Bot/"..file)
+if res == 200 then
+os.execute("rm -fr File_Bot/"..file)
+send(msg.chat_id_, msg.id_,t) 
+dofile('BRAND.lua')  
+else
+send(msg.chat_id_, msg.id_," ❃∫ عذرا الملف لايدعم سورس بويكا \n") 
+end
+return false
+end
+if text and text:match("^(تفعيل) (.*)(.lua)$") and DevBRANDW(msg) then
+local name_t = {string.match(text, "^(تفعيل) (.*)(.lua)$")}
+local file = name_t[2]..'.lua'
+local file_bot = io.open("File_Bot/"..file,"r")
+if file_bot then
+io.close(file_bot)
+t = " ❃∫ بالتاكيد تم تفعيل ملف → "..file.." \n"
+else
+t = " ❃∫ الملف » "..file.."\n ❃∫ تم تفعيل ملف \n"
+end
+local json_file, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/main/File_Bot/"..file)
+if res == 200 then
+local chek = io.open("File_Bot/"..file,'w+')
+chek:write(json_file)
+chek:close()
+send(msg.chat_id_, msg.id_,t) 
+dofile('BRAND.lua')  
+else
+send(msg.chat_id_, msg.id_," ❃∫ عذرا الملف لايدعم سورس بويكا \n") 
+end
+return false
+end
+if text == "مسح الملفات" and DevBRANDW(msg) then
+os.execute("rm -fr File_Bot/*")
+send(msg.chat_id_,msg.id_," ❃∫ تم مسح الملفات")
+return false
 end
 
 if text == ("رفع مطور") and msg.reply_to_message_id_ and DevBRANDW(msg) then
