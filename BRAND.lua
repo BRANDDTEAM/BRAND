@@ -1261,6 +1261,7 @@ end
 return false
 end
 
+
 if text and text:match("^رفع مطور @(.*)$") and DevBRANDW(msg) then
 local username = text:match("^رفع مطور @(.*)$")
 if AddChannel(msg.sender_user_id_) == false then
@@ -3866,7 +3867,7 @@ end,nil)
 end
 end
 if text == 'الملفات' and DevBRANDW(msg) then
-t = ' ❃∫ ملفات السورس بويكا ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻 \n'
+t = ' ❃∫ ملفات السورس بويكا ↓\n≪━━━━━━𝘽𝙆━━━━━━≫ \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -3883,8 +3884,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n ❃∫ اهلا بك في متجر ملفات بويكا\n ❃∫ ملفات السورس ↓\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻\n\n"
-local TextE = "\n𓍹ⵧⵧⵧⵧⵧⵧ⊱•𝘽𝙍•⊰ⵧⵧⵧⵧⵧⵧ𓍻\n ❃∫ علامة تعني { ✓ } ملف مفعل\n ❃∫ علامة تعني { ✘ } ملف معطل\n ❃∫ قناة سورس بويكا ↓\n".." ❃∫ [اضغط هنا لدخول](t.me/CXRCX) \n"
+local TextS = "\n ❃∫ اهلا بك في متجر ملفات بويكا\n ❃∫ ملفات السورس ↓\n≪━━━━━━𝘽𝙆━━━━━━≫\n\n"
+local TextE = "\n≪━━━━━━𝘽𝙆━━━━━━≫\n ❃∫ علامة تعني { ✓ } ملف مفعل\n ❃∫ علامة تعني { ✘ } ملف معطل\n ❃∫ قناة سورس بويكا ↓\n".." ❃∫ [اضغط هنا لدخول](t.me/pvv_v) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -3953,6 +3954,7 @@ os.execute("rm -fr File_Bot/*")
 send(msg.chat_id_,msg.id_," ❃∫ تم مسح الملفات")
 return false
 end
+
 
 if text == ("رفع مطور") and msg.reply_to_message_id_ and DevBRANDW(msg) then
 function start_function(extra, result, success)
@@ -9911,7 +9913,7 @@ local List = {
 ]],
 [[
 - 𓏬 𝐔𝐬𝐄𝐫 : #username 𓂅 .
-- 𓏬 𝐌𝐬𝐆  : #msgs ?? .
+- 𓏬 𝐌𝐬𝐆  : #msgs 𓂅 .
 - 𓏬 𝐒𝐭𝐀 : #stast 𓂅 .
 - 𓏬 𝐈𝐃 : #id 𓂅 .
 ]],
