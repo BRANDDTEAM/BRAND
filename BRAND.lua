@@ -158,7 +158,7 @@ io.popen("mkdir File_Bot")
 io.popen("cd File_Bot && rm -rf commands.lua.1") 
 io.popen("cd File_Bot && rm -rf commands.lua.2") 
 io.popen("cd File_Bot && rm -rf commands.lua.3") 
-io.popen("cd File_Bot && wget https://github.com/BRANDDTEAM/Files_Brand/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://github.com/BRANDDTEAM/Files_BRAND/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -674,7 +674,7 @@ end
 function Addmp3(msg,chat,kkl,ffrr)
 local eer = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..kkl)) 
 download_to_file('https://api.telegram.org/file/bot'..token..'/'..eer.result.file_path,ffrr) 
-sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"🎼┇BrAnD TeAm.")  
+sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"🎼┇BRAND TeAm.")  
 os.execute('rm -rf ./'..ffrr) 
 end
 function Addsticker(msg,chat,Sd,rre)
@@ -3897,7 +3897,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevSoFi(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_Brand/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3935,7 +3935,7 @@ t = " ✬ :الملف » "..file.."\n ✬ :تم تعطيل ملف \n"
 else
 t = " ✬ :بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_Brand/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_BRAND/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -3955,7 +3955,7 @@ t = " ✬ :بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = " ✬ :الملف » "..file.."\n ✬ :تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_Brand/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_BRAND/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
@@ -8057,7 +8057,7 @@ local text =
 ' }\n'..' ✬ : الايدي » { '..idgp..
 ' }\n'..' ✬ : الايدي بالصوره » { '..idph..
 ' }\n'..' ✬ : الرفع » { '..setadd..
-' }\n'..' ✬ : الحظر » { '..banm..' }\n\n══•═══𝘽𝙍══•═══\n ✬ :قناة سورس براند ↓\n [🖨┇BrAnD TeAm.](t.me/CXRCX) \n'
+' }\n'..' ✬ : الحظر » { '..banm..' }\n\n══•═══𝘽𝙍══•═══\n ✬ :قناة سورس براند ↓\n [🖨┇BRAND TeAm.](t.me/CXRCX) \n'
 send(msg.chat_id_, msg.id_,text)     
 end
 if text ==('تثبيت') and msg.reply_to_message_id_ ~= 0 and Mod(msg) then  
@@ -9877,7 +9877,7 @@ if audios.Info == true then
 local Text ='℘︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '🖨┇BrAnD TeAm.',url="t.me/CXRCX"}},
+{{text = '🖨┇BRAND TeAm.',url="t.me/CXRCX"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -11354,7 +11354,7 @@ local Text =[[
 *9️⃣◂ اوامر مطور الاساسي .*
 *🔟◂ اوامر الاعضاء .*
 *══•═══𝘽𝙍══•═══*
-➫ .[🖨┇BrAnD TeAm. ](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm. ](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11371,7 +11371,7 @@ keyboard.inline_keyboard = {
 {text = '9️⃣', callback_data="/help9"},{text = '🔟', callback_data="/help10"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -11402,7 +11402,7 @@ local Text =[[
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
 *══•═══𝘽𝙍══•═══*
-➫ .[🖨┇BrAnD TeAm. ](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm. ](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11413,7 +11413,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -11439,7 +11439,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'══•═══𝘽𝙍══•═══ٴ\n✬ :➫ .[🖨┇BrAnD TeAm. ](t.me/CXRCX)➤ ')
+send(msg.chat_id_, msg.id_, t..'══•═══𝘽𝙍══•═══ٴ\n✬ :➫ .[🖨┇BRAND TeAm. ](t.me/CXRCX)➤ ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '✬ :تم تعطيل الابراج')
@@ -11650,7 +11650,7 @@ local Teext =[[
 ✬ :الجهات
 ✬ :الاشعارات
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11670,7 +11670,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11719,7 +11719,7 @@ local Teext =[[
 ℘︙اوامر التحشيش
 ℘︙صورتي 
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11739,7 +11739,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11770,7 +11770,7 @@ local Teext =[[
 ✬ :وصف
 ✬ :تكرار + عدد
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11790,7 +11790,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11830,7 +11830,7 @@ local Teext =[[
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴ
 ✬ :الاوامر المضافه ( لعرض الاوامر المضافه ) 
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11850,7 +11850,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11895,7 +11895,7 @@ local Teext =[[
 ✬ :تغير امر الاوامر
 ✬ :تغير امر م1 ~ الئ م10
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11915,7 +11915,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11979,7 +11979,7 @@ local Teext =[[
 ℘︙الساعه
 ℘︙التاريخ
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11999,7 +11999,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12053,7 +12053,7 @@ local Teext =[[
 ℘︙رفع + تنزيل ← الحاته
 ℘︙تاك للحاتات
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12073,7 +12073,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12097,7 +12097,7 @@ local Teext =[[
 ℘︙اسم ~ ايدي + بوت غادر 
 ℘︙اذاعه 
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12117,7 +12117,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12194,7 +12194,7 @@ local Teext =[[
 ℘︙تنظيف المشتركين
 ℘︙تنظيف الكروبات
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm.](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm.](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12214,7 +12214,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12251,7 +12251,7 @@ local Teext =[[
 ℘︙شنو رئيك بهاي بالرد
 ℘︙تحب هذا
 ٴ┉ ┉ ┉ ┉ ┉ 𝐃𝐑𝐠 ┉ ┉ ┉ ┉  ┉ٴٴ
-➫ .[🖨┇BrAnD TeAm. ](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm. ](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12271,7 +12271,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/help"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12299,7 +12299,7 @@ local Teext =[[
 *9️⃣◂ اوامر مطور الاساسي .*
 *🔟◂ اوامر الاعضاء .*
 *══•═══𝘽𝙍══•═══*
-➫ .[🖨┇BrAnD TeAm. ](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm. ](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12316,7 +12316,7 @@ keyboard.inline_keyboard = {
 {text = '9️⃣', callback_data="/help9"},{text = '🔟', callback_data="/help10"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12350,7 +12350,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12383,7 +12383,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12413,7 +12413,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12443,7 +12443,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12473,7 +12473,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12494,7 +12494,7 @@ local Teext =[[
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
 *══•═══𝘽𝙍══•═══*
-➫ .[🖨┇BrAnD TeAm. ](t.me/CXRCX)➤
+➫ .[🖨┇BRAND TeAm. ](t.me/CXRCX)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12505,7 +12505,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = 'BrAnD TeAm', url="t.me/CXRCX"},
+{text = 'BRAND TeAm', url="t.me/CXRCX"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
