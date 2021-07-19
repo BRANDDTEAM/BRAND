@@ -9565,7 +9565,7 @@ _key = {
 {{text="🔵 Color Game 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 Rocket Game 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 Arrow Game 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
 {{text = '𝐁𝐑𝐀𝐍𝐃 𝐓𝐄𝐀𝐌', url="t.me/GXKXG"}},
-{{text = 'مطور السورس', url="t.me/VVVZVV"}},
+{{text = 'مطور السورس', url="t.me/S_X_X_G"}},
 }
 send_inlin_key(msg.chat_id_," *☆: قائمه الالعاب الاحترافيه اضغط للعب*",_key,msg.id_)
 else
