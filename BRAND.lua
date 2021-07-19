@@ -3913,7 +3913,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevSoFi(msg) then
-local Get_Files, res = https.request("https://github.com/BRANDDTEAM/Files_BRAND/blob/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3971,7 +3971,7 @@ t = " ✬ :بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = " ✬ :الملف » "..file.."\n ✬ :تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_BRAND/tree/master/File_Bot..file)
+local json_file, res = https.request("https://raw.https://github.com/BRANDDTEAM/Files_BRAND/tree/master/File_Bot..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
