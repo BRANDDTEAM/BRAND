@@ -11639,13 +11639,6 @@ keyboard.inline_keyboard = {
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-if text == "م1" or text == "م2" or text == "م3" or text == "م4" or text == "م5" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"ارسل الاوامر","ارسل الاوامر" }
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
-end
-
 if Text == '/help3' then
 if not Mod(data) then
 local notText = '🚫 عذرا الاوامر هذه لا تخصك'
