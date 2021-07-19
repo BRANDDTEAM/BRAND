@@ -174,7 +174,7 @@ io.popen("mkdir File_Bot")
 io.popen("cd File_Bot && rm -rf commands.lua.1") 
 io.popen("cd File_Bot && rm -rf commands.lua.2") 
 io.popen("cd File_Bot && rm -rf commands.lua.3") 
-io.popen("cd File_Bot && wget https://github.com/BRANDDTEAM/Files_Brand/tree/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://github.com/BRANDDTEAM/Files_Brand/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -814,12 +814,12 @@ return false
 end
 end,nil)   
 end  
-function plugin_BRAND(msg)
+function plugin_Poyka(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
-if plugin.BRAND and msg then
-pre_msg = plugin.BRAND(msg)
+if plugin.Poyka and msg then
+pre_msg = plugin.Poyka(msg)
 end
 end
 end
@@ -3913,7 +3913,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevSoFi(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_BRAND/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/BRANDDTEAM/Files_Brand/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3951,7 +3951,7 @@ t = " ✬ :الملف » "..file.."\n ✬ :تم تعطيل ملف \n"
 else
 t = " ✬ :بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_BRAND/tree/master/File_Bot"..file)
+local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_Brand/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -3971,7 +3971,7 @@ t = " ✬ :بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = " ✬ :الملف » "..file.."\n ✬ :تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_BRAND/tree/master/File_Bot..file)
+local json_file, res = https.request("https://raw.github.com/BRANDDTEAM/Files_Brand/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
@@ -12741,8 +12741,8 @@ return false
 end    
 end   
 --------------------------------------------------------------------------------------------------------------
-SourceBRAND(data.message_,data)
-plugin_BRAND(data.message_)
+SourcePoyka(data.message_,data)
+plugin_Poyka(data.message_)
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
