@@ -2175,7 +2175,7 @@ end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if database:sismember(bot_id..'Chek:Groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_,' *☆: بالتأكيد تم تفعيل الكروب ان احتجت الى مساعده فتوجه الى @S_X_X_G *')
+send(msg.chat_id_, msg.id_,' *☆: بالتأكيد تم تفعيل الكروب*')
 else
 sendText(msg.chat_id_,'\n *☆: بواسطه »* ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n*☆: تم تفعيل الكروب *{'..chat.title_..'}',msg.id_/2097152/0.5,'md')
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
@@ -2230,13 +2230,11 @@ LinkGp = linkgpp.result
 else
 LinkGp = 'لا يوجد'
 end
-Text = ' *☆: تم تعطيل كروب جديده*\n'..
-'\n *☆: بواسطة* {'..Name..'}'..
-'\n *☆: موقعه في الكروب *{'..AddPy..'}' ..
-'\n *☆: ايدي الكروب* {'..IdChat..'}'..
-'\n *☆: عدد اعضاء الكروب* *{'..NumMember..'}*'..
-'\n *☆: اسم الكروب* {['..NameChat..']}'..
-'\n *☆: الرابط* {['..LinkGp..']}'
+Text = '\nتم تعطيل الكروب  ☆: '..
+'\n ☆: بواسطة {'..Name..'}'..
+'\n ☆: ايدي الكروب {'..IdChat..'}'..
+'\n ☆: اسم الكروب {['..NameChat..']}'..
+'\n ☆: الرابط {['..LinkGp..']}'
 if not DevBRANDW(msg) then
 sendText(SUDO,Text,0,'md')
 end
@@ -2603,9 +2601,9 @@ end
 if data.profile_photo_.big_.persistent_id_ then 
 if BRANDChengPhoto ~= data.profile_photo_.big_.persistent_id_ then 
 local Text = {
-  "اصلن امير احلا",
-  "فك عيوني",
-  "هسه كافي جلبت كلساع يغير",
+  "شكو غيرت صورتك يلصاك",
+  "منور طالع حلو ع صوره جديده",
+  "ها يول شو غيرت صورتك😍😂",
   "شكو غيرت صورتك شنو قطيت وحده جديده 😹😹🌚",
   "شو غيرت صورتك شنو تعاركت ويه الحب ؟😹🌞",
   "شكو غيرت الصوره شسالفه ؟؟ 🤔🌞",
@@ -2619,10 +2617,10 @@ end
 end,nil)   
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then  
-Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 ⁦𝙎𝙊𝙐𝙍𝙎𝙀 ⁦𝘽𝙍𝘼𝙉𝘿\n\n[☆  𝘽𝙍𝘼𝙉𝘿 𝘾𝙃𝘼𝙉𝙉𝙀𝙇](http://t.me/GXKXG)\n\n[☆  𝙄𝙉f𝙊 𝙎𝙊𝙐𝙍𝘾𝙀](http://t.me/CXRCX)\n\n[☆  𝘽𝙍𝘼𝙉𝘿 𝘿𝙀𝙑𝙀𝙇𝙊𝙋𝙀𝙍](http://t.me/S_X_X_G)\n\n[☆  𝘽𝙊𝙏 𝘽𝙍𝘼𝙉𝘿](http://t.me/S_X_X_G)"
+Text = "ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄʀ ʙʀᴀɴᴅ\n\n[☆  ʙʀᴀɴᴅ ᴄʜᴀɴɴᴇʟ](http://t.me/GXKXG)\n\n[☆  ɪɴғᴏ sᴏᴜʀᴄᴇ](http://t.me/CXRCX)\n\n[☆  ʙʀᴀɴᴅ ᴅᴇᴠᴇʟᴏᴘᴇʀ](http://t.me/S_X_X_G)\n\n[☆  ʙᴏᴛ ʙʀᴀɴᴅ](http://t.me/S_X_X_G)"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '☆ 𝙎𝙊𝙐𝙍𝙎𝙀 ⁦𝘽𝙍𝘼𝙉𝘿 ',url="t.me/CXRCX/84"}},
+{{text = '☆ sᴏᴜʀᴄʀ ʙʀᴀɴᴅ',url="t.me/CXRCX/84"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/CXRCX&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9729,22 +9727,6 @@ for k,v in pairs(cun) do
 DeleteMessage(msg.chat_id_, {[0] = v})
 end
 send(msg.chat_id_, msg.id_,"☆: تم مسح الميديا بنجاح")
-end
-if text and text:match("^انطق (.*)$") then
-local UrlAntk = https.request('https://apiabs.ml/Antk.php?abs='..URL.escape(text:match("^انطق (.*)$")))
-Antk = JSON.decode(UrlAntk)
-if UrlAntk.ok ~= false then
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '⌁ 𝐁𝐑𝐀𝐍𝐃 𝐓𝐄𝐀𝐌.',url="t.me/CXRCX"}},
-}if text and text:match("^انطق (.*)$") then
-local UrlAntk = https.request('https://apiabs.ml/Antk.php?abs='..URL.escape(text:match("^انطق (.*)$")))
-Antk = JSON.decode(data)
-if UrlAntk.ok ~= false then
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '☆:  𝐁𝐑𝐀𝐍𝐃 𝐓𝐄𝐀𝐌.',url="t.me/CXRCX"}},
-}
 end
 if text == "غنيلي" and not database:get(bot_id.."sing:for:me"..msg.chat_id_) then
 data,res = https.request('https://vvvzvv.ml/amirVois/Teland.php')
