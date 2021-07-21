@@ -8888,77 +8888,6 @@ send(msg.chat_id_, msg.id_,'لا تمتلك صوره في حسابك', 1, 'md')
   end end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil)
 end
-if text == 'تغير الايدي' and Manager(msg) then 
-local List = {
-[[
-- ᴜѕᴇʀɴᴀᴍᴇ 𓄹𓄼 #id .
-- ʏᴏᴜʀ ɪᴅ 𓄹𓄼 #username  .
-- ᴍѕɢѕ 𓄹𓄼 #msgs .
-- ѕᴛᴀᴛѕ 𓄹𓄼 #stast .
-- ᴇᴅɪᴛ 𓄹𓄼 #game .
-]],
-[[
-➭- 𝒔𝒕𝒂𓂅 #stast 𓍯. 💕
-➮- 𝒖𝒔𝒆𝒓𓂅 #username 𓍯. 💕
-➭- 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯. 💕
-➭- 𝒊𝒅 𓂅 #id 𓍯. 💕
-]],
-[[
-⚕ 𓆰 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝑻𝒐 𝑮𝒓𝒐𝒖𝒑 ★
-• 🖤 | 𝑼𝑬𝑺 : #username ‌‌‏⚚
-• 🖤 | 𝑺𝑻𝑨 : #stast 🧙🏻‍♂ ☥
-• 🖤 | 𝑰𝑫 : #id ‌‌‏♕
-• 🖤 | 𝑴𝑺𝑮 : #msgs 𓆊
-]],
-[[
-┌ 𝐔𝐒𝐄𝐑 𖤱 #username 𖦴 .
-├ 𝐌𝐒𝐆 𖤱 #msgs 𖦴 .
-├ 𝐒𝐓𝐀 𖤱 #stast 𖦴 .
-└ 𝐈𝐃 𖤱 #id 𖦴 .
-]],
-[[
-➼ : 𝐼𝐷 𖠀 #id . ♡
-➼ : 𝑈𝑆𝐸𝑅 𖠀 #username .♡
-➼ : 𝑀𝑆𝐺𝑆 𖠀 #msgs .♡
-➼ : 𝑆𝑇𝐴S𝑇 𖠀 #stast .♡ 
-➼ : 𝐸𝐷𝐼𝑇  𖠀 #edit .♡
-]],
-[[
-- ايديڪ  ⁞ #id 💘 ٬
-- يوزرڪ القميل ⁞ #username 💘 ٬
-- رسائلڪ  الطيفهہَ ⁞ #msgs 💘 ٬
-- رتبتڪ الحلوه ⁞ #stast  💘٬
-- سحڪاتڪ الفول ⁞ #edit 💘 ٬ 
-]],
-[[
-- 𝒊𝒅 ➺ #id 💗
-- 𝒖𝒔𝒆𝒓 ➺  #username 💗
-- 𝒎𝒔𝒈 ➺ #msgs 💗
-- 𝒔𝒕𝒂𝒕𝒆 ➺ #stast 💗
-- 𝒆𝒅I𝒕 ➺ #edit  💗
-]],
-[[
-☁️ . USERNAME . #username  💞🧸
-☁️ . STAST . #stast 💗🦄
-☁️ . ID . #id 🧘🏼‍♀💘
-☁️ . MSGS . #msgs 💗👧🏻
-]],
-[[
-- 𓏬 𝐔𝐬𝐄𝐫 : #username 𓂅 .
-- 𓏬 𝐌𝐬𝐆  : #msgs 𓂅 .
-- 𓏬 𝐒𝐭𝐀 : #stast 𓂅 .
-- 𓏬 𝐈𝐃 : #id 𓂅 .
-]],
-[[
-• 𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀 ➤ #username .
-• 𝙈𝙀𝙎𝙎𝘼𝙂𝙀𝙎 ➤ #msgs .
-• 𝙎𝙏𝘼𝙏𝙎 ➤ #stast .
-• 𝙄𝘿 ➤ #id .
-]]}
-local Text_Rand = List[math.random(#List)]
-database:set(bot_id.."KLISH:ID"..msg.chat_id_,Text_Rand)
-send(msg.chat_id_, msg.id_,'*☆: تم تغير الايدي ارسل ايدي لرؤيته*')
-end
 if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'Tshake:Lock:ID:Bot'..msg.chat_id_) then
 if not database:sismember(bot_id..'Tshake:Spam:Group'..msg.sender_user_id_,text) then
 database:sadd(bot_id.."Tshake:Spam:Group"..msg.sender_user_id_,text) 
@@ -9070,7 +8999,6 @@ end,nil)
 end,nil)   
 end
 end
-
 if text == 'سحكاتي' or text == 'تعديلاتي' then 
 local Num = tonumber(database:get(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_) or 0)
 if Num == 0 then 
@@ -10562,7 +10490,15 @@ keyboard.inline_keyboard = {
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-
+if msg.content_.members_[0].id_ == tonumber(bot_id) then 
+print("it is Bot")
+Namebot = (database:get(bot_id.."Tshake:Name:Bot") or "براند")
+local Texti = "↞ اهلين انا + "..Namebot.." 🐉\n\n↞ اختصاصي ادارة المجموعات من السبام والخ..\n↞ للتفعيل ارفعني مشرف وارسل تفعيل في المجموعه ."
+keyboard = {} 
+keyboard.inline_keyboard ={{{text = "اضفني", switch_inline_query="أنا بوت حمايه اضيفوني في مجموعتكم لزيادة الامان ."}}}
+local msg_id = msg.id_/2097152/0.5
+local res = https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Texti).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
 end
 if data.ID == "UpdateNewMessage" then  -- new msg
 msg = data.message_
